@@ -1,105 +1,40 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>AYOOKK KITA NGE-DATE</title>
-
 <style>
-body{
-margin:0;
-height:100vh;
-background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:Arial,sans-serif;
-overflow:hidden;
-transition:0.5s;
-}
-
-.container{
-text-align:center;
-background:white;
-padding:45px;
-border-radius:25px;
-box-shadow:0 0 30px rgba(0,0,0,0.25);
-max-width:420px;
-}
-
-h1{color:#ff6fae;}
-h2{color:#6c8cff;}
-
-button{
-padding:14px 28px;
-font-size:18px;
-border:none;
-border-radius:14px;
-cursor:pointer;
-margin:10px;
-}
-
-#yes{background:#ff9aa2;color:white;}
-#no{background:#b5d0ff;position:absolute;}
-
-.cat{font-size:70px;margin-bottom:10px;}
-input{
-padding:10px;border-radius:10px;border:1px solid #ccc;width:80%;
-margin:5px;
-}
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ffd6e8,#d6e8ff);display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden}
+.card{background:#fff;padding:30px;border-radius:20px;text-align:center;max-width:400px;box-shadow:0 0 20px rgba(0,0,0,.1)}
+button{padding:12px 25px;border:none;border-radius:12px;font-size:16px;margin:10px;cursor:pointer}
+#yes{background:#ff9acb;color:#fff}
+#no{background:#bcd7ff}
+.hidden{display:none}
+.fade{animation:fade .5s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
 </style>
 </head>
-
 <body>
+<iframe width="0" height="0" src="https://www.youtube.com/embed/2Vv-BfVoq4g?autoplay=1&loop=1&playlist=2Vv-BfVoq4g" frameborder="0" allow="autoplay"></iframe>
 
-<div class="container" id="box">
-<div id="cat" class="cat">😺</div>
-<h1>ddy ❤️</h1>
-<h2>AYOOKK KITA NGE-DATE</h2>
+<div class="card" id="page1">
+<div id="cat" style="font-size:100px">😺</div>
+<h2>ddy ❤️</h2>
+<h1>AYOOKK KITA NGE-DATE</h1>
 <button id="yes">YA</button>
 <button id="no">TIDAK</button>
 </div>
 
-<script>
-const noBtn=document.getElementById("no");
-const yesBtn=document.getElementById("yes");
-const cat=document.getElementById("cat");
-const box=document.getElementById("box");
-
-let stage=0;
-
-// klik TIDAK
-noBtn.addEventListener("click",()=>{
-stage++;
-
-const texts=["yakin gk mau?","nanti yully marah loh","gak boleh nolak","gak mau"];
-const cats=["😿","😾","😠","😾"];
-
-noBtn.innerText=texts[Math.min(stage-1,3)];
-cat.innerText=cats[Math.min(stage-1,3)];
-
-if(stage>=4){
-noBtn.style.left=Math.random()*300+"px";
-noBtn.style.top=Math.random()*300+"px";
-}
-});
-
-// klik YA
-yesBtn.addEventListener("click",()=>{
-document.body.style.background="#ffc0cb";
-document.body.innerHTML=`
-<div class="container">
-<div class="cat">😻</div>
-<h1>Hehehe 💖</h1>
-<button id="next">KLIK AKU</button>
+<div class="card hidden" id="transition">
+<h1>💖💖💖</h1>
+<div style="font-size:80px">😻</div>
+<button id="klik">KLIK AKU</button>
 </div>
-`;
 
 <div class="card hidden" id="letter">
 <h2>Surat dari Yullyra 💌</h2>
-<p>Hallo ddy❤️,
-Makasih ya udah jadi rumah aku, tempat aku manja,
-tempat aku cerita, dan tempat aku minta jajan 😆<br><br>
-Aku cinta kamu setiap hari, tanpa expired 🤍 </p>
+<p>Sayangku ddy,
+makasih ya udah selalu jadi rumah buat aku. Aku bersyukur banget punya kamu. Kamu adalah tempat ternyaman aku pulang. Aku cinta kamu hari ini, besok, dan seterusnya 💖</p>
 <button id="more">Masih ada lagi</button>
 </div>
 
